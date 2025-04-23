@@ -5,6 +5,7 @@ interface TodoState {
   todos: Todo[];
   filters: FilterState;
   darkMode: boolean;
+  user?: string;
 }
 
 type TodoAction =
@@ -12,7 +13,9 @@ type TodoAction =
   | { type: 'UPDATE_TODO'; payload: Todo }
   | { type: 'DELETE_TODO'; payload: string }
   | { type: 'SET_FILTERS'; payload: FilterState }
-  | { type: 'TOGGLE_DARK_MODE' };
+  | { type: 'TOGGLE_DARK_MODE' }
+  | { type: 'SET_USER'; payload: string }
+  | { type: 'LOGOUT' };
 
 const initialFilters: FilterState = {
   search: '',
@@ -27,6 +30,7 @@ const initialState: TodoState = {
   todos: [],
   filters: initialFilters,
   darkMode: window.matchMedia('(prefers-color-scheme: dark)').matches,
+  user: localStorage.getItem('username') || undefined,
 };
 
 const TodoContext = createContext<{
@@ -62,6 +66,18 @@ function todoReducer(state: TodoState, action: TodoAction): TodoState {
       return {
         ...state,
         darkMode: !state.darkMode,
+      };
+    case 'SET_USER':
+      localStorage.setItem('username', action.payload);
+      return {
+        ...state,
+        user: action.payload,
+      };
+    case 'LOGOUT':
+      localStorage.removeItem('username');
+      return {
+        ...state,
+        user: undefined,
       };
     default:
       return state;
