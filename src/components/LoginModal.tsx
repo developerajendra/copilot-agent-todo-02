@@ -8,7 +8,11 @@ interface LoginModalProps {
   onLogin: (username: string) => void;
 }
 
-const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLogin }) => {
+const LoginModal: React.FC<LoginModalProps> = ({
+  isOpen,
+  onClose,
+  onLogin,
+}) => {
   const [username, setUsername] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -44,7 +48,9 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLogin }) => 
               />
             </div>
 
-            <button type="submit" className="todo-button-primary w-full px-4 py-2">
+            <button
+              type="submit"
+              className="todo-button-primary w-full px-4 py-2">
               Sign in
             </button>
           </form>

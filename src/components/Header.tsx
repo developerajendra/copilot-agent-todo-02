@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useTodo } from '../context/TodoContext';
-import { MoonIcon, SunIcon, PlusIcon, UserCircleIcon } from '@heroicons/react/24/outline';
+import {
+  MoonIcon,
+  SunIcon,
+  PlusIcon,
+  UserCircleIcon,
+} from '@heroicons/react/24/outline';
 import AddTaskModal from './AddTaskModal';
 import LoginModal from './LoginModal';
 import toast from 'react-hot-toast';
