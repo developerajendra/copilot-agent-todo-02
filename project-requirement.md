@@ -41,4 +41,8 @@
 
 ## other prompt
 
-let's add user register and login screen as pop up which will be first screen, whenever user hit the application it should first ask to register or login, if user has register through username and password it should be able to login
+- let's add user register and login screen
+- The design should be similar to attached image
+- The login screen should be a pop up which will be first screen.
+- Whenever user hit the application it should first ask to register or login.
+- If user has register through username and password it should be able to login successfully.
