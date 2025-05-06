@@ -38,3 +38,7 @@
 | REQ-032        | Clear filters functionality                              | As a user, I want to easily clear all applied filters.                                           | A clear button resets all filter selections to their default state.                           |
 | REQ-033        | Custom task type creation                                | As a user, I want to create custom task types.                                                   | Users can add new task types through the task creation/edit interface.                        |
 | REQ-034        | Multi-select dropdown UI                                 | As a user, I want an intuitive way to select multiple filters.                                   | Priority and task type filters use dropdown menus with checkboxes for multi-selection.        |
+
+## other prompt
+
+let's add user register and login screen as pop up which will be first screen, whenever user hit the application it should first ask to register or login, if user has register through username and password it should be able to login
